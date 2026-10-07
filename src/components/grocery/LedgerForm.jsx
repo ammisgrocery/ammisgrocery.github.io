@@ -1,0 +1,8 @@
+import React, { useState } from 'react';
+import { today } from '@/components/grocery/store';
+export default function LedgerForm({ onSave, onClose }) {
+  const [form, setForm] = useState({ date: today(), category: '', description: '', direction: 'in', amount: '' });
+  const set = (k, v) => setForm({ ...form, [k]: v });
+  function submit(e) { e.preventDefault(); if (onSave({ date: form.date, category: form.category.trim(), description: form.description.trim(), moneyIn: form.direction === 'in' ? Number(form.amount) : 0, moneyOut: form.direction === 'out' ? Number(form.amount) : 0 })) onClose(); }
+  return <form className="grocery-form" onSubmit={submit}><div className="form-grid"><label>Date<input required type="date" value={form.date} onChange={e => set('date', e.target.value)} /></label><label>Category<input required maxLength={60} placeholder="e.g. Rent, planned sales" value={form.category} onChange={e => set('category', e.target.value)} /></label><label>Direction<select value={form.direction} onChange={e => set('direction', e.target.value)}><option value="in">Money in</option><option value="out">Money out</option></select></label><label>Amount ($)<input required type="number" min="0.01" step="0.01" value={form.amount} onChange={e => set('amount', e.target.value)} /></label></div><label>Description<textarea maxLength={300} value={form.description} onChange={e => set('description', e.target.value)} /></label><p className="muted text-sm">Future-dated entries are planned amounts, not guaranteed income. Do not add a completed order’s payment again.</p><div className="form-actions"><button className="btn secondary" type="button" onClick={onClose}>Cancel</button><button className="btn" type="submit">Add entry</button></div></form>;
+}

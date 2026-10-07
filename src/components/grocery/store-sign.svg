@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="title">
+  <title id="title">Ammi's Grocery and Halal Meat</title>
+  <rect width="1200" height="400" rx="28" fill="#183c32"/>
+  <path d="M80 78h1040v54H80z" fill="#c9a96e"/>
+  <path d="M110 146h980v166H110z" fill="#f6f0e4"/>
+  <path d="M80 316h1040v20H80z" fill="#c9a96e"/>
+  <circle cx="202" cy="229" r="47" fill="#d8e5d8"/>
+  <path d="M201 262c-4-38 5-66 31-89m-31 57c-19-19-35-23-53-19m58 1c18-18 33-23 49-20" fill="none" stroke="#35634d" stroke-linecap="round" stroke-width="9"/>
+  <text x="625" y="219" fill="#183c32" font-family="Georgia,serif" font-size="76" font-weight="700" text-anchor="middle">ammi's grocery</text>
+  <text x="625" y="273" fill="#6d765d" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="9" text-anchor="middle">GROCERY &amp; HALAL MEAT</text>
+</svg>
